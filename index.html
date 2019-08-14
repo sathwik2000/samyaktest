@@ -27,7 +27,7 @@ function insert() {
       
     }
   };
-  xhttp.open("POST", "http://localhost:5000/register", true);
+  xhttp.open("POST", "http://10.46.193.169:5000/register", true);
 xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
   xhttp.send(`{'name':'${name}','mail':'${mail}','college':'${college}','amount':'${amount}'}`);
