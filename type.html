@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Registrations</h2>
+
+<div id="demo">
+<input type='text' id="id" placeholder="name" /><br>
+
+<button type="button" onclick="search()">check</button>
+</div>
+
+<script>
+function search() {
+  var id = document.getElementById("id").value
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      alert(this.responseText)
+      
+    }
+  };
+xhttp.open("POST", "http://localhost:5000/search", true);
+xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+xhttp.send(`{'id':'${id}'}`);
+}
+</script>
+
+</body>
+</html>
